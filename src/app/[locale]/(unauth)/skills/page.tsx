@@ -1,9 +1,11 @@
+import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
     locale: props.params.locale,
-    namespace: "Index",
+    namespace: "About",
   });
 
   return {
@@ -12,8 +14,14 @@ export async function generateMetadata(props: { params: { locale: string } }) {
   };
 }
 
-export default function Index(props: { params: { locale: string } }) {
+export default function Skills(props: { params: { locale: string } }) {
   unstable_setRequestLocale(props.params.locale);
+  const t = useTranslations("Experiences");
 
-  return <>Hello</>;
+  return (
+    <>
+      <p>{t("about_paragraph")}</p>
+      Skills page
+    </>
+  );
 }
