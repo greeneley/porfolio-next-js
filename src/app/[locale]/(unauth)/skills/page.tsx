@@ -16,12 +16,6 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 
 export default function Skills(props: { params: { locale: string } }) {
   unstable_setRequestLocale(props.params.locale);
-  const t = useTranslations("Experiences");
 
-  return (
-    <>
-      <p>{t("about_paragraph")}</p>
-      Skills page
-    </>
-  );
+  return <>Skills page</>;
 }

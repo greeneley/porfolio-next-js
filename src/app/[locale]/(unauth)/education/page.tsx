@@ -16,12 +16,5 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 
 export default function Education(props: { params: { locale: string } }) {
   unstable_setRequestLocale(props.params.locale);
-  const t = useTranslations("Education");
-
-  return (
-    <>
-      <p>{t("about_paragraph")}</p>
-      Education page
-    </>
-  );
+  return <>Education page</>;
 }

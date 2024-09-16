@@ -10,18 +10,10 @@ export const Header = (props: {
 
   return (
     <>
-      <header className="border-b border-gray-300">
-        <div className="pb-8 pt-16">
-          <h1 className="text-3xl font-bold text-gray-900">{AppConfig.name}</h1>
-        </div>
-
-        <div className="flex justify-between">
+      <header>
+        <div className="flex justify-center items-center mt-5">
           <nav>
             <ul className="flex flex-wrap gap-x-5 text-xl">{props.leftNav}</ul>
-          </nav>
-
-          <nav>
-            <ul className="flex flex-wrap gap-x-5 text-xl">{props.rightNav}</ul>
           </nav>
         </div>
       </header>

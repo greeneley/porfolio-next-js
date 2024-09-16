@@ -16,12 +16,6 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 
 export default function Experiences(props: { params: { locale: string } }) {
   unstable_setRequestLocale(props.params.locale);
-  const t = useTranslations("Experiences");
 
-  return (
-    <>
-      <p>{t("about_paragraph")}</p>
-      Experiences page
-    </>
-  );
+  return <>Experiences page</>;
 }

@@ -1,4 +1,4 @@
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -13,7 +13,28 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 }
 
 export default function Index(props: { params: { locale: string } }) {
-  unstable_setRequestLocale(props.params.locale);
-
-  return <>Hello</>;
+  return (
+    <div className="flex flex-col justify-center items-center">
+      <section className="text-center w-full">
+        <div className="max-w-52 pb-2.5 m-auto">
+          <img
+            src="/assets/images/avatar.png"
+            className="rounded-full border-gray-500 border-1 shadow-md"
+            alt="avatar"
+            width="200"
+            height="200"
+          />
+        </div>
+        <h1 className="font-medium mt-2.5 w-full">Đinh Thanh Hải</h1>
+        <ul className="mx-auto p-0 ">
+          <li>
+            <span className="fi fi-vn"></span>
+          </li>
+        </ul>
+      </section>
+      <section className="m-auto mt-5 mb-8">
+        <h3 className="font-normal text-[#9d9d9d]">Full stack developer</h3>
+      </section>
+    </div>
+  );
 }

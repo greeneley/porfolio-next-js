@@ -15,7 +15,6 @@ const BaseTemplate = (props: {
     <div className="w-full px-1 text-gray-700 antialiased">
       <div className="mx-auto max-w-screen-md flex flex-col min-h-screen">
         <Header leftNav={props.leftNav} rightNav={props.rightNav} />
-
         <main className="flex-1">{props.children}</main>
 
         <footer className="border-t border-gray-300 py-8 text-center text-sm">

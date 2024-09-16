@@ -1,5 +1,6 @@
 import "@/styles/global.css";
-
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+import "@/styles/reset.css";
 import type { Metadata } from "next";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
