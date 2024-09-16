@@ -1,3 +1,10 @@
+# 1.0.0 (2024-09-16)
+
+
+### Features
+
+* build about page ([333768b](https://github.com/greeneley/portfolio-next-js/commit/333768bfd589fae66e00cc8b2b9d8e473c5e3dc4))
+
 # [3.58.0](https://github.com/ixartz/Next-js-Boilerplate/compare/v3.57.0...v3.58.0) (2024-09-15)
 
 
