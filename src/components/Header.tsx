@@ -13,7 +13,7 @@ export const Header = (props: {
       <header>
         <div className="flex justify-center items-center mt-5">
           <nav>
-            <ul className="flex flex-wrap gap-x-5 text-xl">{props.leftNav}</ul>
+            <ul className="flex flex-wrap text-xl">{props.leftNav}</ul>
           </nav>
         </div>
       </header>

@@ -1,0 +1,18 @@
+.animate_animated {
+    animation: 1s;
+}
+
+.animate_slideInLeft {
+    animation-name: slideInleft;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translate3d(-100%,0,0);
+        visibility: visible;
+    }
+    
+    100% {
+        transform: translateZ(0);
+    }
+}

@@ -1,4 +1,7 @@
 import { getTranslations } from "next-intl/server";
+import clsx from "clsx";
+import SlideLeft from "@/components/transition/SlideLeft";
+import SlideRight from "@/components/transition/SlideRight";
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -25,7 +28,9 @@ export default function Index(props: { params: { locale: string } }) {
             height="200"
           />
         </div>
-        <h1 className="font-medium mt-2.5 w-full">Đinh Thanh Hải</h1>
+        <SlideLeft>
+          <h1 className={clsx("font-medium mt-2.5 w-full")}>Đinh Thanh Hải</h1>
+        </SlideLeft>
         <ul className="mx-auto p-0 ">
           <li>
             <span className="fi fi-vn"></span>
@@ -33,7 +38,9 @@ export default function Index(props: { params: { locale: string } }) {
         </ul>
       </section>
       <section className="m-auto mt-5 mb-8">
-        <h3 className="font-normal text-[#9d9d9d]">Full stack developer</h3>
+        <SlideRight>
+          <h3 className="font-normal text-[#9d9d9d]">Full stack developer</h3>
+        </SlideRight>
       </section>
     </div>
   );
