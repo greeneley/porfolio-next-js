@@ -3,6 +3,15 @@
 
 ### Features
 
+* add animation for navbar ([ce849f3](https://github.com/greeneley/portfolio-next-js/commit/ce849f3dccce156d9433bb76e9dc69f443ce5057))
+* add hover in nav and animation ([f8892ca](https://github.com/greeneley/portfolio-next-js/commit/f8892ca89bbd06f08e477b7fd2c4da1a9d4d18df))
+* build about page ([333768b](https://github.com/greeneley/portfolio-next-js/commit/333768bfd589fae66e00cc8b2b9d8e473c5e3dc4))
+
+# 1.0.0 (2024-09-17)
+
+
+### Features
+
 * add hover in nav and animation ([f8892ca](https://github.com/greeneley/portfolio-next-js/commit/f8892ca89bbd06f08e477b7fd2c4da1a9d4d18df))
 * build about page ([333768b](https://github.com/greeneley/portfolio-next-js/commit/333768bfd589fae66e00cc8b2b9d8e473c5e3dc4))
 
