@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { BaseTemplate } from "@/templates/BaseTemplate";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import React from "react";
 
 const navLinks = [
   { name: "About", href: "/", translation: "about_link" },
@@ -31,11 +32,16 @@ export default function Layout(props: {
         <Link
           href={link.href}
           className={clsx(
-            "border-none text-gray-700 hover:bg-[#818b981a] hover:py-1.5 hover:rounded-md",
-            isActive && "bg-[#818b9826] px-2 py-1.5 rounded-md",
+            "border-none text-gray-700 hover:bg-[#818b981a] hover:py-2 hover:rounded-md",
           )}
         >
           {t(link.translation)}
+          {isActive && (
+            <motion.div
+              className="border-b-2 border-b-blue-500"
+              layoutId="underline"
+            />
+          )}
         </Link>
       </li>
     );
