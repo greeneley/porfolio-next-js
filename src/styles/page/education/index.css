@@ -36,3 +36,19 @@
     border-image: linear-gradient(to bottom, rgba(0,0,0, 1), rgba( 0, 0, 0, 0)) 1 100%;
 }
 
+@media only screen and (max-width: 1024px) {
+    .timeline-item {
+        width: 95%;
+        padding-top: 3rem;
+        padding-left: 1em;
+        padding-bottom: 1em;
+    }
+    
+    .timeline-item::before {
+        content: attr(date-is);
+        left: 1em;
+        font-weight: 700;
+    }
+
+}
+

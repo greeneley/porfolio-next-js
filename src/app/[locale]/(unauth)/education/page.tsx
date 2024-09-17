@@ -1,5 +1,6 @@
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import "@/styles/page/education/index.css";
+
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
     locale: props.params.locale,
@@ -14,8 +15,9 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 
 export default function Education(props: { params: { locale: string } }) {
   unstable_setRequestLocale(props.params.locale);
+
   return (
-    <div className="w-full mx-0 my-5">
+    <div className="w-full mx-3 md:mx-0 my-5">
       <div className="timeline-item" date-is="2017 - 2020">
         <div className="bg-gray-100 flex items-center">
           <img

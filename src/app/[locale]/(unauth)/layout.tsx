@@ -6,6 +6,7 @@ import { BaseTemplate } from "@/templates/BaseTemplate";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import React from "react";
+import { useIsMobile } from "@/hook/useIsMobile";
 
 const navLinks = [
   { name: "About", href: "/", translation: "about_link" },
@@ -28,7 +29,7 @@ export default function Layout(props: {
     const isActive = pathname === link.href;
 
     return (
-      <li key={link.name} className="mx-2 my-1.5">
+      <li key={link.name} className="mx-2 my-1.5 w-fit">
         <Link
           href={link.href}
           className={clsx(
