@@ -6,9 +6,21 @@ import { BaseTemplate } from "@/templates/BaseTemplate";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import React from "react";
-import { useIsMobile } from "@/hook/useIsMobile";
 
-const navLinks = [
+enum TranslationType {
+  "about_link",
+  "education",
+  "experiences",
+  "skills",
+  "person_project",
+}
+interface INavLink {
+  name: string;
+  href: string;
+  translation: keyof typeof TranslationType;
+}
+
+const navLinks: Array<INavLink> = [
   { name: "About", href: "/", translation: "about_link" },
   { name: "Education", href: "/education", translation: "education" },
   { name: "Experiences", href: "/experiences", translation: "experiences" },

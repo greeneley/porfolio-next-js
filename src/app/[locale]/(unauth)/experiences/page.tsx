@@ -1,4 +1,4 @@
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -13,7 +13,5 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 }
 
 export default function Experiences(props: { params: { locale: string } }) {
-  unstable_setRequestLocale(props.params.locale);
-
   return <>Experiences page</>;
 }
