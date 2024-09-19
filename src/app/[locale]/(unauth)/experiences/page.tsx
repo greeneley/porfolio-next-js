@@ -17,7 +17,7 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 export default function Experiences(props: { params: { locale: string } }) {
   return (
     <>
-      <section>
+      <section className="px-2">
         <div className="panel">
           <div className="header">
             <div className="bg-gray-100 flex items-center p-4">
@@ -29,10 +29,12 @@ export default function Experiences(props: { params: { locale: string } }) {
               />
               <div className="mx-5">
                 <h4>FPT Software Da Nang</h4>
-                <div className="w-fit flex justify-center items-center">
-                  <span>Fullstack developer</span>
-                  <FaCalendarAlt className="ml-5 mr-3" />
-                  <span className="time">09/2023 – Present</span>
+                <div className="w-fit flex justify-start md:justify-center items-center flex-wrap gap-2">
+                  <div>Fullstack developer</div>
+                  <div className="flex justify-center items-center">
+                    <FaCalendarAlt className="mr-3" />
+                    <span className="time">09/2023 – Present</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -145,10 +147,12 @@ export default function Experiences(props: { params: { locale: string } }) {
               />
               <div className="mx-5">
                 <h4>mgm technology partners</h4>
-                <div className="w-fit flex justify-center items-center">
-                  <span>Fullstack developer</span>
-                  <FaCalendarAlt className="ml-5 mr-3" />
-                  <span className="time">09/2022 – 08/2023</span>
+                <div className="w-fit flex justify-start md:justify-center items-center flex-wrap gap-2">
+                  <div>Fullstack developer</div>
+                  <div className="flex justify-center items-center">
+                    <FaCalendarAlt className="mr-3" />
+                    <span className="time">09/2022 – 08/2023</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -202,10 +206,12 @@ export default function Experiences(props: { params: { locale: string } }) {
               />
               <div className="mx-5">
                 <h4>Smartdev</h4>
-                <div className="w-fit flex justify-center items-center">
-                  <span>Frontend developer</span>
-                  <FaCalendarAlt className="ml-5 mr-3" />
-                  <span className="time">06/2022 – 08/2022</span>
+                <div className="w-fit flex justify-start md:justify-center items-center flex-wrap gap-2">
+                  <div>Frontend developer</div>
+                  <div className="flex justify-center items-center">
+                    <FaCalendarAlt className="mr-3" />
+                    <span className="time">06/2022 – 08/2022</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -252,10 +258,12 @@ export default function Experiences(props: { params: { locale: string } }) {
               />
               <div className="mx-5">
                 <h4>Viettel Business Solution</h4>
-                <div className="w-fit flex justify-center items-center">
-                  <span>Software Engineer</span>
-                  <FaCalendarAlt className="ml-5 mr-3" />
-                  <span className="time">02/2020 – 10/2021</span>
+                <div className="w-fit flex justify-start md:justify-center items-center flex-wrap gap-2">
+                  <div>Software Engineer</div>
+                  <div className="flex justify-center items-center">
+                    <FaCalendarAlt className="mr-3" />
+                    <span className="time">02/2020 – 10/2021</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -346,10 +354,12 @@ export default function Experiences(props: { params: { locale: string } }) {
               />
               <div className="mx-5">
                 <h4>Masaryk University, Brno, Czech Republic</h4>
-                <div className="w-fit flex justify-center items-center">
-                  <span>Internship AI</span>
-                  <FaCalendarAlt className="ml-5 mr-3" />
-                  <span className="time">04/2019 – 08/2019</span>
+                <div className="w-fit flex justify-start md:justify-center items-center flex-wrap gap-2">
+                  <div>Internship AI</div>
+                  <div className="flex justify-center items-center">
+                    <FaCalendarAlt className="mr-3" />
+                    <span className="time">04/2019 – 08/2019</span>
+                  </div>
                 </div>
               </div>
             </div>
