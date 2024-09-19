@@ -9,6 +9,22 @@
 * build experiences page ([318c6fd](https://github.com/greeneley/portfolio-next-js/commit/318c6fd08032b97001ac9eedeae8ed47e1208913))
 * finish education ([8bb919e](https://github.com/greeneley/portfolio-next-js/commit/8bb919eb3010ce9a2c7d20dc5fc05bc458f15af8))
 * fix bug ([ad2c901](https://github.com/greeneley/portfolio-next-js/commit/ad2c901e5e8777ff3eba0cbefd7d6e61b8dc340b))
+* fix bug 2 ([ef6753e](https://github.com/greeneley/portfolio-next-js/commit/ef6753e890fa87ccc3759e23d0fcff473e44f7d5))
+* remove useIsMobile hook ([7e6b3f9](https://github.com/greeneley/portfolio-next-js/commit/7e6b3f9e93bbba80fc07e260762bae58c46b866d))
+* responsive experience page ([2fb7aea](https://github.com/greeneley/portfolio-next-js/commit/2fb7aeadb9b2fdb238530c04184eeb26bf7be8ef))
+* responsive navbar and education bar ([6f5e596](https://github.com/greeneley/portfolio-next-js/commit/6f5e596f22608cc1fa8b29c85a5037f1d077ac71))
+
+# 1.0.0 (2024-09-19)
+
+
+### Features
+
+* add animation for navbar ([ce849f3](https://github.com/greeneley/portfolio-next-js/commit/ce849f3dccce156d9433bb76e9dc69f443ce5057))
+* add hover in nav and animation ([f8892ca](https://github.com/greeneley/portfolio-next-js/commit/f8892ca89bbd06f08e477b7fd2c4da1a9d4d18df))
+* build about page ([333768b](https://github.com/greeneley/portfolio-next-js/commit/333768bfd589fae66e00cc8b2b9d8e473c5e3dc4))
+* build experiences page ([318c6fd](https://github.com/greeneley/portfolio-next-js/commit/318c6fd08032b97001ac9eedeae8ed47e1208913))
+* finish education ([8bb919e](https://github.com/greeneley/portfolio-next-js/commit/8bb919eb3010ce9a2c7d20dc5fc05bc458f15af8))
+* fix bug ([ad2c901](https://github.com/greeneley/portfolio-next-js/commit/ad2c901e5e8777ff3eba0cbefd7d6e61b8dc340b))
 * remove useIsMobile hook ([7e6b3f9](https://github.com/greeneley/portfolio-next-js/commit/7e6b3f9e93bbba80fc07e260762bae58c46b866d))
 * responsive experience page ([2fb7aea](https://github.com/greeneley/portfolio-next-js/commit/2fb7aeadb9b2fdb238530c04184eeb26bf7be8ef))
 * responsive navbar and education bar ([6f5e596](https://github.com/greeneley/portfolio-next-js/commit/6f5e596f22608cc1fa8b29c85a5037f1d077ac71))
