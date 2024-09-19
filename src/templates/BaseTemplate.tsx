@@ -2,14 +2,21 @@ import { useTranslations } from "next-intl";
 
 import { AppConfig } from "@/utils/AppConfig";
 import React from "react";
-import { Header } from "@/components/Header";
-
+import { useIsMobile } from "@/hook/useIsMobile";
+import dynamic from "next/dynamic";
+const Header = dynamic(
+  () => import("@/components/Header").then((module) => module.Header),
+  {
+    ssr: false,
+  },
+);
 const BaseTemplate = (props: {
   leftNav: React.ReactNode;
   rightNav?: React.ReactNode;
   children: React.ReactNode;
 }) => {
   const t = useTranslations("BaseTemplate");
+  const isMobile: boolean = useIsMobile();
 
   return (
     <div className="w-full px-1 text-gray-700 antialiased">
