@@ -17,7 +17,7 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 export default function Experiences(props: { params: { locale: string } }) {
   return (
     <>
-      <section className="px-2">
+      <section className="px-2 text-base">
         <div className="panel">
           <div className="header">
             <div className="bg-gray-100 flex items-center p-4">
@@ -28,7 +28,7 @@ export default function Experiences(props: { params: { locale: string } }) {
                 height="90"
               />
               <div className="mx-5">
-                <h4>FPT Software Da Nang</h4>
+                <h4 className="size-sm">FPT Software Da Nang</h4>
                 <div className="w-fit flex justify-start md:justify-center items-center flex-wrap gap-2">
                   <div>Fullstack developer</div>
                   <div className="flex justify-center items-center">
@@ -39,7 +39,7 @@ export default function Experiences(props: { params: { locale: string } }) {
               </div>
             </div>
           </div>
-          <div className="content p-4">
+          <div className="content p-4 ">
             <p>
               <strong>Project:&nbsp;</strong>
               <span>LG CNS Low Code</span>
@@ -146,7 +146,7 @@ export default function Experiences(props: { params: { locale: string } }) {
                 height="90"
               />
               <div className="mx-5">
-                <h4>mgm technology partners</h4>
+                <h4 className="size-sm">mgm technology partners</h4>
                 <div className="w-fit flex justify-start md:justify-center items-center flex-wrap gap-2">
                   <div>Fullstack developer</div>
                   <div className="flex justify-center items-center">
@@ -205,7 +205,7 @@ export default function Experiences(props: { params: { locale: string } }) {
                 height="90"
               />
               <div className="mx-5">
-                <h4>Smartdev</h4>
+                <h4 className="size-sm">Smartdev</h4>
                 <div className="w-fit flex justify-start md:justify-center items-center flex-wrap gap-2">
                   <div>Frontend developer</div>
                   <div className="flex justify-center items-center">
@@ -257,7 +257,7 @@ export default function Experiences(props: { params: { locale: string } }) {
                 height="90"
               />
               <div className="mx-5">
-                <h4>Viettel Business Solution</h4>
+                <h4 className="size-sm">Viettel Business Solution</h4>
                 <div className="w-fit flex justify-start md:justify-center items-center flex-wrap gap-2">
                   <div>Software Engineer</div>
                   <div className="flex justify-center items-center">
@@ -353,7 +353,9 @@ export default function Experiences(props: { params: { locale: string } }) {
                 height="90"
               />
               <div className="mx-5">
-                <h4>Masaryk University, Brno, Czech Republic</h4>
+                <h4 className="size-sm">
+                  Masaryk University, Brno, Czech Republic
+                </h4>
                 <div className="w-fit flex justify-start md:justify-center items-center flex-wrap gap-2">
                   <div>Internship AI</div>
                   <div className="flex justify-center items-center">

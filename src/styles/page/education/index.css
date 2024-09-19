@@ -38,7 +38,7 @@
 
 @media only screen and (max-width: 1024px) {
     .timeline-item {
-        width: 95%;
+        width: 100%;
         padding-top: 3rem;
         padding-left: 1em;
         padding-bottom: 1em;

@@ -2,7 +2,7 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 
 export const useIsMobile = (): boolean => {
-  const [width, setWidth] = useState<number>(0);
+  const [width, setWidth] = useState<number>(1000);
 
   useLayoutEffect(() => {
     setWidth(window.innerWidth);

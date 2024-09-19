@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion, useCycle } from "framer-motion";
 import { LuAlignJustify } from "react-icons/lu";
@@ -45,7 +46,10 @@ export const Header = (props: {
                 animate={isOpen ? "open" : "closed"}
                 variants={variants}
               >
-                <ul className="flex flex-col flex-wrap text-xl">
+                <ul
+                  className="flex flex-col flex-wrap text-xl"
+                  onClick={() => toggleOpen()}
+                >
                   {props.leftNav}
                 </ul>
               </motion.nav>
