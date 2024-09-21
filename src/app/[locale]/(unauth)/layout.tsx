@@ -11,7 +11,7 @@ enum TranslationType {
   "about_link",
   "education",
   "experiences",
-  "skills",
+  "certificates",
   "person_project",
 }
 interface INavLink {
@@ -24,7 +24,7 @@ const navLinks: Array<INavLink> = [
   { name: "About", href: "/", translation: "about_link" },
   { name: "Education", href: "/education", translation: "education" },
   { name: "Experiences", href: "/experiences", translation: "experiences" },
-  { name: "Skills", href: "/skills", translation: "skills" },
+  { name: "Certificates", href: "/certificates", translation: "certificates" },
   {
     name: "Personal Project",
     href: "/person-projects",

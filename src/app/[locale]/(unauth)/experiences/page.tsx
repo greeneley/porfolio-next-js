@@ -5,7 +5,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
     locale: props.params.locale,
-    namespace: "About",
+    namespace: "Experiences",
   });
 
   return {

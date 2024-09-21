@@ -4,7 +4,7 @@ import "@/styles/page/education/index.css";
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
     locale: props.params.locale,
-    namespace: "About",
+    namespace: "Education",
   });
 
   return {
