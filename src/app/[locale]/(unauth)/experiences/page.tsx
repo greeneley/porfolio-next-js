@@ -17,7 +17,7 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 export default function Experiences(props: { params: { locale: string } }) {
   return (
     <>
-      <section className="px-2">
+      <section className="px-2 [&_p]:my-6">
         {experiences.map((experience, index) => (
           <div key={index} className="panel">
             <div className="header">

@@ -62,7 +62,7 @@ export default function Layout(props: {
   return (
     <>
       <BaseTemplate leftNav={navList}>
-        <div className={clsx("py-5 text-xl [&_p]:my-6")}>{props.children}</div>
+        <div className={clsx("py-5 text-xl")}>{props.children}</div>
       </BaseTemplate>
     </>
   );

@@ -17,7 +17,7 @@ export default function Education(props: { params: { locale: string } }) {
   unstable_setRequestLocale(props.params.locale);
 
   return (
-    <div className="w-fit mx-3 md:mx-0 my-5">
+    <div className="w-fit mx-3 md:mx-0 my-5 [&_p]:my-6">
       <div className="timeline-item" date-is="2017 - 2020">
         <div className="bg-gray-100 flex items-center">
           <img
