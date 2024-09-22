@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import { MdPlace } from "react-icons/md";
 import { FaCalendarAlt } from "react-icons/fa";
+import Image from "next/image";
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -22,11 +22,11 @@ export default function Experiences(props: { params: { locale: string } }) {
           <div key={index} className="panel">
             <div className="header">
               <div className="bg-gray-100 flex items-center p-4">
-                <img
+                <Image
                   src={experience.logo}
                   alt={`logo-${experience.company}`}
-                  width="90"
-                  height="90"
+                  width={90}
+                  height={90}
                 />
                 <div className="mx-5">
                   <h4 className="size-sm">{experience.company}</h4>
@@ -73,14 +73,17 @@ const experiences = [
     position: "Fullstack developer",
     duration: "09/2023 – Present",
     project: "LG CNS Low Code",
-    description: "Participate in developing two applications for LG customer",
+    description:
+      "Participate in developing two applications for LG customer: HR Core and Onboarding",
     responsibilities: [
       "Analyze requirements and build the screen",
-      "Implement functionalities including sending email, generating PDF templates, uploading large excel file…",
-      "Train team member about resolving conflict in Git",
+      "Implement functionalities such as schedule a batch email, upload large excel file, build tree diagram, …",
+      "Generate reports from SQL database by using OzReport",
+      "Build multi-tenant API",
+      "Review code and support member teams: tech knowledge, review code, manage branch, train new colleague, …",
     ],
     technologies:
-      "HTML/CSS, Javascript, jQuery, JSP, Java, Spring boot, MySQL, Git, Jira, SAP, Excel, Gradle, BizActor",
+      "HTML/CSS, Javascript, jQuery, JSP, Java, Spring boot, MySQL, Git, Jira, SAP, Excel, Gradle, BizActor, OzReport",
   },
   {
     logo: "/assets/images/company/mgm-logo.png",
