@@ -1,26 +1,26 @@
-import { getTranslations } from "next-intl/server";
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
+import React from 'react';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
     locale: props.params.locale,
-    namespace: "Certificates",
+    namespace: 'Certificates',
   });
 
   return {
-    title: t("meta_title"),
-    description: t("meta_description"),
+    title: t('meta_title'),
+    description: t('meta_description'),
   };
 }
 
-interface CertificateProps {
+type CertificateProps = {
   imageSrc: string;
   alt: string;
   title: string;
   description?: string;
   date: string;
-}
+};
 
 const Certificate: React.FC<CertificateProps> = ({
   imageSrc,
@@ -29,31 +29,31 @@ const Certificate: React.FC<CertificateProps> = ({
   description,
   date,
 }) => (
-  <div className="bg-white rounded-lg shadow-md p-4 transition-all duration-300 hover:shadow-lg">
+  <div className="rounded-lg bg-white p-4 shadow-md transition-all duration-300 hover:shadow-lg">
     <div className="flex items-start gap-4">
       <Image
         src={imageSrc}
         alt={alt}
         width={64}
         height={64}
-        className="flex-shrink-0"
+        className="shrink-0"
       />
-      <div className="flex-grow">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+      <div className="grow">
+        <div className="mb-2 flex flex-col justify-between sm:flex-row sm:items-center">
           <h3 className="text-lg font-semibold text-[#4682b4]">{title}</h3>
-          <span className="text-sm text-gray-500 mt-1 sm:mt-0">{date}</span>
+          <span className="mt-1 text-sm text-gray-500 sm:mt-0">{date}</span>
         </div>
         {description && (
-          <p className="text-sm text-gray-600 italic">{description}</p>
+          <p className="text-sm italic text-gray-600">{description}</p>
         )}
       </div>
     </div>
   </div>
 );
 
-interface LanguageCertificateProps extends CertificateProps {
+type LanguageCertificateProps = {
   details: string[];
-}
+} & CertificateProps;
 
 const LanguageCertificate: React.FC<LanguageCertificateProps> = ({
   imageSrc,
@@ -62,23 +62,23 @@ const LanguageCertificate: React.FC<LanguageCertificateProps> = ({
   details,
   date,
 }) => (
-  <div className="bg-white rounded-lg shadow-md p-4 transition-all duration-300 hover:shadow-lg">
+  <div className="rounded-lg bg-white p-4 shadow-md transition-all duration-300 hover:shadow-lg">
     <div className="flex items-start gap-4">
       <Image
         src={imageSrc}
         alt={alt}
         width={64}
         height={64}
-        className="flex-shrink-0"
+        className="shrink-0"
       />
-      <div className="flex-grow">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+      <div className="grow">
+        <div className="mb-2 flex flex-col justify-between sm:flex-row sm:items-center">
           <h3 className="text-lg font-semibold text-[#4682b4]">{title}</h3>
-          <span className="text-sm text-gray-500 mt-1 sm:mt-0">{date}</span>
+          <span className="mt-1 text-sm text-gray-500 sm:mt-0">{date}</span>
         </div>
         <div className="space-y-1">
           {details.map((detail, index) => (
-            <p key={index} className="text-sm text-gray-600 italic">
+            <p key={index} className="text-sm italic text-gray-600">
               {detail}
             </p>
           ))}
@@ -88,12 +88,12 @@ const LanguageCertificate: React.FC<LanguageCertificateProps> = ({
   </div>
 );
 
-interface PrizeProps {
+type PrizeProps = {
   date: string;
   title: string;
   organization: string;
   details: string;
-}
+};
 
 const Prize: React.FC<PrizeProps> = ({
   date,
@@ -101,14 +101,14 @@ const Prize: React.FC<PrizeProps> = ({
   organization,
   details,
 }) => (
-  <div className="bg-white rounded-lg shadow-md p-4 transition-all duration-300 hover:shadow-lg">
-    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-2">
+  <div className="rounded-lg bg-white p-4 shadow-md transition-all duration-300 hover:shadow-lg">
+    <div className="mb-2 flex flex-col items-start justify-between sm:flex-row sm:items-center">
       <h3 className="text-lg font-semibold text-[#4682b4]">{title}</h3>
-      <span className="text-sm text-gray-500 mt-1 sm:mt-0">{date}</span>
+      <span className="mt-1 text-sm text-gray-500 sm:mt-0">{date}</span>
     </div>
     <div className="space-y-2">
-      <p className="text-gray-700">{organization}</p>
-      <p className="text-sm text-gray-600 italic">{details}</p>
+      <p className="text-base text-gray-700">{organization}</p>
+      <p className="text-sm italic text-gray-600">{details}</p>
     </div>
   </div>
 );
@@ -119,7 +119,7 @@ const Section: React.FC<{ title: string; children: React.ReactNode }> = ({
 }) => (
   <section className="px-2">
     <div className="header">
-      <div className="bg-gray-100 flex items-center p-4">
+      <div className="flex items-center bg-gray-100 p-4">
         <div className="mx-5">
           <h4 className="size-sm">{title}</h4>
         </div>
@@ -152,7 +152,7 @@ export default function Certificates() {
             alt="toeic"
             title="TOEIC: 790/990"
             date="06/2020" // Add date here
-            details={["Listening 395/495, Reading: 395/495"]}
+            details={['Listening 395/495, Reading: 395/495']}
           />
           <LanguageCertificate
             imageSrc="/assets/images/delf.png"
@@ -160,9 +160,9 @@ export default function Certificates() {
             title="DELF B2: 80/100"
             date="05/2022" // Add date here
             details={[
-              "French language (1st national class)",
-              "Listening 15/25, Reading 20/25",
-              "Writing 24/25, Speaking 21/20",
+              'French language (1st national class)',
+              'Listening 15/25, Reading 20/25',
+              'Writing 24/25, Speaking 21/20',
             ]}
           />
         </div>
