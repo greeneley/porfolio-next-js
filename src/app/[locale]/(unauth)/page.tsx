@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import clsx from "clsx";
 import SlideLeft from "@/components/transition/SlideLeft";
 import SlideRight from "@/components/transition/SlideRight";
+import { ZaloContact } from "@/components/ZaloContact";
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -42,6 +43,7 @@ export default function Index() {
           <h3 className="font-normal text-[#9d9d9d]">Full stack developer</h3>
         </SlideRight>
       </section>
+      <ZaloContact />
     </div>
   );
 }

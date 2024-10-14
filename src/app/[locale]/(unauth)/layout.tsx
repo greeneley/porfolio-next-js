@@ -2,10 +2,26 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import clsx from "clsx";
-import { BaseTemplate } from "@/templates/BaseTemplate";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import React from "react";
+import dynamic from "next/dynamic";
+import { Spinner } from "@nextui-org/spinner";
+
+const BaseTemplate = dynamic(
+  () =>
+    import("@/templates/BaseTemplate").then((module) => module.BaseTemplate),
+  {
+    ssr: false,
+    loading: () => {
+      return (
+        <div className="flex justify-center items-center mt-16 md:mt-32">
+          <Spinner />
+        </div>
+      );
+    },
+  },
+);
 
 enum TranslationType {
   "about_link",
