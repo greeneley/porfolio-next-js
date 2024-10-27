@@ -61,7 +61,8 @@ export default function Layout(props: {
         <Link
           href={link.href}
           className={clsx(
-            "border-none text-gray-700 hover:bg-[#818b981a] hover:py-2 hover:rounded-md",
+            "py-2 text-lg font-medium transition-colors duration-300",
+            isActive ? "text-blue-600" : "text-gray-600 hover:text-blue-600",
           )}
         >
           {t(link.translation)}
@@ -69,6 +70,9 @@ export default function Layout(props: {
             <motion.div
               className="border-b-2 border-b-blue-500"
               layoutId="underline"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
             />
           )}
         </Link>

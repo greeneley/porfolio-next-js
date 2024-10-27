@@ -3,7 +3,6 @@ import clsx from "clsx";
 import SlideLeft from "@/components/transition/SlideLeft";
 import SlideRight from "@/components/transition/SlideRight";
 import { ZaloContact } from "@/components/ZaloContact";
-
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
     locale: props.params.locale,

@@ -25,7 +25,7 @@ export const Header = ({ leftNav }: { leftNav: React.ReactNode }) => {
       {(!isMobile || isOpen) && (
         <nav className={isMobile ? "transition-all duration-300" : ""}>
           <ul
-            className={`flex ${isMobile ? "flex-col" : "flex-row"} flex-wrap text-xl justify-center items-center`}
+            className={`flex ${isMobile ? "flex-col" : "flex-row gap-8"} flex-wrap text-xl justify-center items-center`}
             onClick={toggleNav}
           >
             {leftNav}
