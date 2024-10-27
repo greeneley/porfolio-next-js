@@ -1,74 +1,90 @@
-import { getTranslations } from "next-intl/server";
-import { FaCalendarAlt } from "react-icons/fa";
-import Image from "next/image";
-
-export async function generateMetadata(props: { params: { locale: string } }) {
-  const t = await getTranslations({
-    locale: props.params.locale,
-    namespace: "Experiences",
-  });
-
-  return {
-    title: t("meta_title"),
-    description: t("meta_description"),
-  };
-}
+"use client";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 export default function Experiences(props: { params: { locale: string } }) {
   return (
     <>
-      <section className="px-2 [&_p]:my-6">
-        {experiences.map((experience, index) => (
-          <div key={index} className="panel">
-            <div className="header">
-              <div className="bg-gray-100 flex items-center p-4">
-                <Image
-                  src={experience.logo}
-                  alt={`logo-${experience.company}`}
-                  width={90}
-                  height={90}
-                />
-                <div className="mx-5">
-                  <h4 className="size-sm">{experience.company}</h4>
-                  <div className="w-fit flex justify-start md:justify-center items-center flex-wrap gap-2">
-                    <div>{experience.position}</div>
-                    <div className="flex justify-center items-center">
-                      <FaCalendarAlt className="mr-3" />
-                      <span className="time">{experience.duration}</span>
+      <div className="w-full p-4 min-h-screen">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-4xl mx-auto"
+        >
+          {experiences.map((exp, companyIndex) => (
+            <motion.div
+              key={companyIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: companyIndex * 0.1 }}
+            >
+              <Card className="mb-8 overflow-hidden border-1 border-gray-200 shadow hover:shadow-lg">
+                <CardHeader className="bg-white dark:bg-gray-800 pb-2">
+                  <div className="flex items-center space-x-4">
+                    <img
+                      src={exp.logo}
+                      alt={`${exp.company} logo`}
+                      className="w-16 h-16 rounded-full"
+                    />
+                    <div>
+                      <CardTitle className="text-2xl text-gray-800 dark:text-white">
+                        {exp.company}
+                      </CardTitle>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        {exp.position} | {exp.duration}
+                      </p>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="content p-4">
-              {experience.projects.map((project, projIndex) => (
-                <div key={projIndex} className="mb-4">
-                  <p>
-                    <strong>Project:&nbsp;</strong>
-                    <span>{project.name}</span>
-                  </p>
-                  <p className="text-justify">{project.description}</p>
-                  <ul className="pl-5 list-disc">
-                    {project.responsibilities.map((responsibility, idx) => (
-                      <li key={idx} className="text-justify">
-                        {responsibility}
-                      </li>
-                    ))}
-                  </ul>
-                  <p>
-                    <strong>Technologies:</strong>
-                    <br />
-                    {project.technologies}
-                  </p>
-                  {projIndex < experience.projects.length - 1 && (
-                    <hr className="my-4" />
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </section>
+                </CardHeader>
+                <CardContent className="pt-4">
+                  {exp.projects.map((project, projectIndex) => (
+                    <div key={projectIndex} className="mb-6 last:mb-0">
+                      <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
+                        {project.name}
+                      </h3>
+                      <p className="text-sm mb-3 text-gray-600 dark:text-gray-300">
+                        {project.description}
+                      </p>
+                      <h4 className="font-medium mb-2 text-sm text-justify text-gray-700 dark:text-gray-200">
+                        Responsibilities:
+                      </h4>
+                      <ul className="list-disc list-inside mb-3 text-sm text-gray-600 dark:text-gray-300">
+                        {project.responsibilities.map((resp, rIndex) => (
+                          <li key={rIndex} className="mb-1 text-justify">
+                            {resp}
+                          </li>
+                        ))}
+                      </ul>
+                      <h4 className="font-medium mb-2 text-sm text-gray-700 dark:text-gray-200">
+                        Technologies:
+                      </h4>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies
+                          .split(", ")
+                          .map((tech, tIndex) => (
+                            <Badge
+                              key={tIndex}
+                              variant="secondary"
+                              className="text-xs bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                      </div>
+                      {projectIndex < exp.projects.length - 1 && (
+                        <Separator className="my-4" />
+                      )}
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </>
   );
 }
@@ -149,7 +165,8 @@ const experiences = [
     projects: [
       {
         name: "Viettel Smart Traffic Light",
-        description: "Develop a Smart Traffic Light Control System connected to Camera",
+        description:
+          "Develop a Smart Traffic Light Control System connected to Camera",
         responsibilities: [
           "Research and document software system recommendations, include a function list, user case, legal regulations, plan implementation",
           "Be principle responsible for the overall architecture’s design and development: C4 model, functional model",
@@ -157,7 +174,8 @@ const experiences = [
           "Make a project plan and delegate responsibilities to a 3-member team as lead role",
           "Build the front-end interface of the software",
         ],
-        technologies: "HTML/CSS, Bootstrap, Javascript, Reactjs, Python, Django, gRPC, Transport simulation: SUMO, VISSIM, AIMSUN, Transport Simulation",
+        technologies:
+          "HTML/CSS, Bootstrap, Javascript, Reactjs, Python, Django, gRPC, Transport simulation: SUMO, VISSIM, AIMSUN, Transport Simulation",
       },
       {
         name: "Viettel Highway Monitoring System",
@@ -166,7 +184,8 @@ const experiences = [
           "Optimize and integrate image processing function to recognize license plates, count traffic, detect violations",
           "Build a prototype version",
         ],
-        technologies: "Python, YOLO, TensorFlow, HTML/CSS, jQuery, Bootstrap, Reactjs",
+        technologies:
+          "Python, YOLO, TensorFlow, HTML/CSS, jQuery, Bootstrap, Reactjs",
       },
       {
         name: "Viettel Maps",
