@@ -1,16 +1,16 @@
-import Image from 'next/image';
-import { getTranslations } from 'next-intl/server';
-import React from 'react';
+import Image from "next/image";
+import { getTranslations } from "next-intl/server";
+import React from "react";
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
     locale: props.params.locale,
-    namespace: 'Certificates',
+    namespace: "Certificates",
   });
 
   return {
-    title: t('meta_title'),
-    description: t('meta_description'),
+    title: t("meta_title"),
+    description: t("meta_description"),
   };
 }
 
@@ -152,7 +152,7 @@ export default function Certificates() {
             alt="toeic"
             title="TOEIC: 790/990"
             date="06/2020" // Add date here
-            details={['Listening 395/495, Reading: 395/495']}
+            details={["Listening 395/495, Reading: 395/495"]}
           />
           <LanguageCertificate
             imageSrc="/assets/images/delf.png"
@@ -160,9 +160,9 @@ export default function Certificates() {
             title="DELF B2: 80/100"
             date="05/2022" // Add date here
             details={[
-              'French language (1st national class)',
-              'Listening 15/25, Reading 20/25',
-              'Writing 24/25, Speaking 21/20',
+              "French language (1st national class)",
+              "Listening 15/25, Reading 20/25",
+              "Writing 24/25, Speaking 21/20",
             ]}
           />
         </div>
