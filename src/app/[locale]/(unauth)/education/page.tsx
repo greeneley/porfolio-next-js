@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import "@/styles/page/education/index.css";
 import Image from "next/image";
+import { Card } from "@/components/ui/card";
 
 export async function generateMetadata(props: { params: { locale: string } }) {
 	const t = await getTranslations({
@@ -14,40 +15,57 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 	};
 }
 
+interface EducationEntry {
+	period: string;
+	institution: string;
+	location: string;
+	description: string;
+	logoUrl: string;
+}
+
+const educationData: EducationEntry[] = [
+	{
+		period: "2017 - 2020",
+		institution: "INSA Centre Val de Loire",
+		location: "Bourges, France",
+		description: "Master Degree - Specialization: Computer Security and Technologies",
+		logoUrl: "/assets/images/insa-cvl.jpg"
+	},
+	{
+		period: "2015 - 2017",
+		institution: "Hue University of Education",
+		location: "Hue, Vietnam",
+		description: "Higher School Preparatory Engineer Classes",
+		logoUrl: "/assets/images/ens-hue.png"
+	},
+	{
+		period: "2012 - 2015",
+		institution: "Le Thanh Tong High School for The Gifted",
+		location: "Vietnam",
+		description: "Specialized math subject class",
+		logoUrl: "/assets/images/logo-thpt.png"
+	}
+];
+
 export default function Education(props: { params: { locale: string } }) {
 	return (
-		<div className="w-fit mx-3 md:mx-0 my-5 [&_p]:my-6">
-			<div className="timeline-item" date-is="2017 - 2020">
-				<div className="bg-gray-100 flex items-center">
-					<Image src="/assets/images/insa-cvl.jpg" alt="logo-cvl" width={84} height={84} />
-					<div className="mx-5">
-						<h4>INSA Centre Val de Loire, Bourges, France</h4>
-					</div>
+		<div className="mx-3 md:mx-0 my-5 [&_p]:my-6">
+			{educationData.map((entry, index) => (
+				<div key={index} className="timeline-item" date-is={entry.period}>
+					<Card className="p-4">
+						<div className="flex gap-4 items-start">
+							<div className="relative w-[80px] h-[80px] shrink-0 border border-border rounded-md overflow-hidden">
+								<Image src={entry.logoUrl} alt={`${entry.institution} logo`} fill className="object-cover" />
+							</div>
+							<div className="space-y-1">
+								<h3 className="font-semibold text-xl">{entry.institution}</h3>
+								<p className="text-sm text-muted-foreground">{entry.location}</p>
+								<p className="text-sm">{entry.description}</p>
+							</div>
+						</div>
+					</Card>
 				</div>
-				<p>
-					Master Degree - <i> Specialization:</i> Computer Security and Technologies
-				</p>
-			</div>
-
-			<div className="timeline-item" date-is="2015 - 2017">
-				<div className="bg-gray-100 flex items-center">
-					<Image src="/assets/images/ens-hue.png" alt="logo-ens-hue" width={84} height={84} />
-					<div className="mx-5">
-						<h4>Hue University of Education, Hue, Vietnam</h4>
-					</div>
-				</div>
-				<p>Higher School Preparatory Engineer Classes</p>
-			</div>
-
-			<div className="timeline-item" date-is="2012 - 2015">
-				<div className="bg-gray-100 flex items-center">
-					<Image src="/assets/images/logo-thpt.png" alt="logo-thpt" width={84} height={84} />
-					<div className="mx-5">
-						<h4>Le Thanh Tong High School for The Gifted, Vietnam</h4>
-					</div>
-				</div>
-				<p>Specialized math subject class</p>
-			</div>
+			))}
 		</div>
 	);
 }
