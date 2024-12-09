@@ -1,9 +1,17 @@
-# Boilerplate and Starter for Next.js 14+, Tailwind CSS 3.4, and TypeScript.
+# Portfolio.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/615614d4-337b-4605-9f2a-a6703e593961/deploy-status)](https://app.netlify.com/sites/htdinh-porfolio/deploys)
 
 ---
+Welcome to my portfolio! This project showcases my skills, experience,... It serves as a digital resume and a place to explore the work I've done.
 
-Made with ♥ by [CreativeDesignsGuru](https://creativedesignsguru.com) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
+## Features
+- Professional Introduction: Learn about my background, skills, and career highlights.
+- Projects Gallery: A collection of my top projects with detailed descriptions, live demos, and source code links.
+- Responsive Design: Fully optimized for viewing on desktop, tablet, and mobile devices.
+- Interactive UI: Smooth navigation with an engaging and user-friendly interface.
 
-[![Sponsor Next JS Boilerplate](https://cdn.buymeacoffee.com/buttons/default-red.png)](https://github.com/sponsors/ixartz)
+## Live Demo
+Check out the live version of the portfolio here: Your Live URL
+
+
